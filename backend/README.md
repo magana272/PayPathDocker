@@ -6,7 +6,7 @@ AI-powered financial insights via OpenAI. MongoDB for storage. JSON REST API con
 
 ## Tech Stack
 
-- **Language:** Go 1.22+
+- **Language:** Go 1.26+
 - **Router:** `net/http` (stdlib ServeMux with method routing)
 - **Database:** MongoDB Atlas (`go.mongodb.org/mongo-driver/v2`)
 - **AI:** OpenAI GPT-4o-mini (`github.com/sashabaranov/go-openai`)
@@ -134,6 +134,8 @@ MONGODB_URI=mongodb+srv://...
 JWT_SECRET=...
 FRONTEND_URL=http://localhost:3000
 ```
+
+In production (Render) also set `ENV=production` and point `FRONTEND_URL` at the deployed frontend origin (`https://pay-path-mu.vercel.app`, no trailing slash) — it becomes the CORS `Access-Control-Allow-Origin` header. Render supplies `PORT` automatically and the server binds to it. See the [root README](../README.md#deployment) for full deploy steps.
 
 ## Makefile
 
