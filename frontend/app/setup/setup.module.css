@@ -1,0 +1,580 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--bg);
+  padding: 24px 16px;
+}
+
+.card {
+  width: 100%;
+  max-width: 480px;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.logo {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  color: var(--text);
+}
+
+.headerSub {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+}
+
+/* ─── Step bar ─── */
+.stepBar {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 28px;
+}
+
+.stepItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+}
+
+.stepItem:last-child {
+  flex: 0;
+}
+
+.stepDot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: all 0.15s;
+}
+
+.stepActive {
+  border-color: var(--text);
+  color: var(--text);
+  background: var(--text);
+  color: var(--bg);
+}
+
+.stepDone {
+  border-color: var(--text);
+  background: var(--text);
+  color: var(--bg);
+}
+
+.stepLabel {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.stepLabelActive {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.stepLine {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+  margin: 0 6px;
+}
+
+.stepLineDone {
+  background: var(--text);
+}
+
+/* ─── Step body ─── */
+.stepBody {
+  min-height: 260px;
+}
+
+.stepTitle {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.stepDesc {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+/* ─── Form ─── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+}
+
+.input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  padding: 8px 0;
+  color: var(--text);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  outline: none;
+  flex: 1;
+}
+
+.input:focus {
+  border-bottom-color: var(--text);
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.select {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  padding: 8px 0;
+  color: var(--text);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+}
+
+.select:focus {
+  border-bottom-color: var(--text);
+}
+
+.addBtn {
+  align-self: flex-start;
+  background: transparent;
+  border: 1px solid var(--text);
+  color: var(--text);
+  padding: 6px 14px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+.addBtn:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+
+/* ─── Added items list ─── */
+.list {
+  list-style: none;
+  border-top: 1px solid var(--border-light);
+  margin-top: 4px;
+}
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--border-light);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.removeBtn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 11px;
+  padding: 2px 4px;
+  flex-shrink: 0;
+}
+
+.removeBtn:hover {
+  color: var(--red);
+}
+
+/* ─── Error ─── */
+.error {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--red);
+  margin-top: 8px;
+}
+
+/* ─── Navigation ─── */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 28px;
+  border-top: 1px solid var(--border-light);
+  padding-top: 20px;
+}
+
+.navBack {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 8px 16px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+.navBack:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.navBack:not(:disabled):hover {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+.navSkip {
+  flex: 1;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.navNext {
+  background: var(--text);
+  color: var(--bg);
+  border: none;
+  padding: 8px 20px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+.navNext:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.navNext:not(:disabled):hover {
+  background: var(--text-secondary);
+}
+
+/* ─── Payment step ─── */
+.planGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.planRow {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.planCard {
+  flex: 1;
+  position: relative;
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 14px 12px;
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: border-color 0.15s;
+}
+
+.planCard:hover {
+  border-color: var(--text-secondary);
+}
+
+.planCardActive {
+  border-color: var(--text);
+}
+
+.planBadge {
+  position: absolute;
+  top: -9px;
+  left: 10px;
+  background: var(--text);
+  color: var(--bg);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 2px 6px;
+}
+
+.planLabel {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+}
+
+.planPrice {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.planPeriod {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.planDesc {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.cardForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ─── Order summary ─── */
+.orderSummary {
+  border: 1px solid var(--border);
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.orderRow {
+  display: flex;
+  justify-content: space-between;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.orderTotal {
+  border-top: 1px solid var(--border);
+  padding-top: 8px;
+  margin-top: 2px;
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--text);
+}
+
+/* ─── Section label ─── */
+.paySection {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  margin: 16px 0 8px;
+}
+
+/* ─── Test card hint ─── */
+.testCard {
+  background: color-mix(in srgb, var(--text) 5%, transparent);
+  border: 1px dashed var(--border);
+  padding: 12px 14px;
+  margin: 16px 0;
+}
+
+.testCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.testCardBadge {
+  background: var(--text);
+  color: var(--bg);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 2px 6px;
+  flex-shrink: 0;
+}
+
+.testCardDetails {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 16px;
+  margin-bottom: 10px;
+}
+
+.testCardDetails > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.testLabel {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+}
+
+.testValue {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.5px;
+}
+
+.testCardFill {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+
+.testCardFill:hover {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+/* ─── Stripe checkout button ─── */
+.checkoutBtn {
+  width: 100%;
+  background: var(--text);
+  color: var(--bg);
+  border: none;
+  padding: 12px 0;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+.checkoutBtn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.checkoutBtn:not(:disabled):hover {
+  opacity: 0.85;
+}
+
+/* ─── Lock notice ─── */
+.payLock {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+
+@media (max-width: 520px) {
+  .planGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  .planCard {
+    padding: 10px 8px;
+  }
+
+  .planPrice {
+    font-size: 16px;
+  }
+
+  .planDesc {
+    font-size: 9px;
+  }
+
+  .stepBar {
+    gap: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+  }
+
+  .stepLabel {
+    font-size: 7px;
+    letter-spacing: 0.5px;
+  }
+
+  .stepDot {
+    width: 18px;
+    height: 18px;
+    font-size: 8px;
+  }
+}

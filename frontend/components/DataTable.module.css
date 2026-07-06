@@ -1,0 +1,103 @@
+.scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  overflow: hidden;
+  margin-top: 0;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.table th {
+  text-align: left;
+  padding: 8px 0;
+  font-size: 9px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  background: transparent;
+  border-bottom: 1px solid var(--text);
+}
+
+.table td {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--text);
+}
+
+.table tr:last-child td {
+  border-bottom: 1px solid var(--border);
+}
+
+.table tr:hover td {
+  background: transparent;
+}
+
+.iconBtn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.1s;
+}
+
+.iconBtn:hover {
+  color: var(--text);
+}
+
+.iconBtnDanger:hover {
+  color: var(--red);
+}
+
+.iconBtnSuccess:hover {
+  color: var(--green);
+}
+
+.actions {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.red {
+  color: var(--red);
+}
+
+@media (max-width: 768px) {
+  .table {
+    min-width: 0;
+    width: 100%;
+    table-layout: auto;
+  }
+
+  .table th {
+    padding: 6px 6px 6px 0;
+    font-size: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .table td {
+    padding: 8px 6px 8px 0;
+    font-size: 11px;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  .btnSave,
+  .btnDelete {
+    padding: 4px 0;
+    font-size: 11px;
+  }
+}

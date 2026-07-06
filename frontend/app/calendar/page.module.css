@@ -1,0 +1,357 @@
+.calHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.calTitle {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 14px;
+  font-weight: 600;
+  min-width: 160px;
+  text-align: center;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.calNav {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 0;
+  padding: 6px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.calNav:hover {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+
+.calScroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.calGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-top: 1px solid var(--text);
+  border-left: 1px solid var(--border);
+  background: var(--bg);
+  min-width: 700px;
+}
+
+.calWeekday {
+  padding: 8px;
+  text-align: center;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text);
+  background: transparent;
+  border-bottom: 1px solid var(--text);
+  border-right: 1px solid var(--border);
+}
+
+.calCell {
+  height: 100px;
+  padding: 6px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  background: transparent;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.calCell:hover {
+  background: var(--surface-alt);
+}
+
+.calCellEmpty {
+  height: 100px;
+  padding: 6px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-alt);
+}
+
+.calCellToday {
+  background: transparent;
+}
+
+.calCellSelected {
+  outline: 2px solid var(--text);
+  outline-offset: -2px;
+}
+
+.calDay {
+  display: inline-block;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.calDayToday {
+  background: var(--text);
+  color: var(--bg);
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.calEvents {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.calEvent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px 0;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+.calEventPayday {
+  background: transparent;
+  color: var(--green);
+}
+
+.calEventBill {
+  background: transparent;
+  color: var(--red);
+}
+
+.calEventLabel {
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.calEventAmount {
+  font-weight: 600;
+  white-space: nowrap;
+  margin-left: 4px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 6px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badgePayday {
+  background: transparent;
+  color: var(--green);
+  border: 1px solid var(--green);
+}
+
+.badgeBill {
+  background: transparent;
+  color: var(--red);
+  border: 1px solid var(--red);
+}
+
+.dayDetailList {
+  margin-bottom: 12px;
+}
+
+.dayDetailEmpty {
+  color: var(--text-muted);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+}
+
+.dayDetailRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.dayDetailRowClickable {
+  cursor: pointer;
+  padding: 8px 4px;
+  margin: 0 -4px;
+  transition: background 0.1s;
+}
+
+.dayDetailRowClickable:hover {
+  background: var(--surface-alt);
+}
+
+.dayDetailLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dayDetailLabel {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+}
+
+.dayDetailAmountIncome {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.dayDetailAmountBill {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--red);
+}
+
+.modeToggleRow {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.modeToggle {
+  flex: 1;
+  padding: 6px 0;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+}
+
+.modeToggleActive {
+  flex: 1;
+  padding: 6px 0;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--text);
+  color: var(--bg);
+}
+
+.billsSection {
+  margin-top: 24px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 16px;
+}
+
+.billsHeading {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+@media (max-width: 768px) {
+  .calHeader {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .calTitle {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .calNav {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .calGrid {
+    min-width: 0;
+  }
+
+  .calCell {
+    height: 60px;
+    padding: 3px;
+  }
+
+  .calCellEmpty {
+    height: 60px;
+    padding: 3px;
+  }
+
+  .calDay {
+    font-size: 10px;
+  }
+
+  .calEvent {
+    font-size: 8px;
+    padding: 0;
+  }
+
+  .calEventLabel {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
+  .calWeekday {
+    font-size: 8px;
+    padding: 4px 1px;
+    letter-spacing: 0;
+  }
+}
+
+@media (max-width: 390px) {
+  .calCell {
+    height: 50px;
+    padding: 2px;
+  }
+
+  .calCellEmpty {
+    height: 50px;
+    padding: 2px;
+  }
+
+  .calDay {
+    font-size: 9px;
+  }
+
+  .calEvent {
+    font-size: 7px;
+  }
+
+  .calEventAmount {
+    display: none;
+  }
+
+  .calWeekday {
+    font-size: 7px;
+  }
+}

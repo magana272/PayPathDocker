@@ -1,0 +1,250 @@
+.sidebar {
+  width: 180px;
+  background: var(--bg);
+  border-right: 1px solid var(--border);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  user-select: none;
+}
+
+.logo {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  padding: 20px 20px 16px;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+
+.links {
+  flex: 1;
+}
+
+.link {
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 10px 20px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: color 0.1s;
+  display: block;
+  border-left: 2px solid transparent;
+}
+
+.link:hover {
+  color: var(--text);
+}
+
+.active {
+  color: var(--text);
+  font-weight: 600;
+  border-left-color: var(--text);
+  background: var(--surface-alt);
+}
+
+.addBtnDesktop {
+  background: transparent;
+  border: 1px solid var(--text);
+  color: var(--text);
+  padding: 8px 20px;
+  margin: 12px 20px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+.addBtnDesktop:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.categoryPicker {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.categoryBtn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.1s;
+}
+
+.categoryBtn:hover {
+  border-color: var(--text);
+}
+
+.categoryIcon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.categoryLabel {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text);
+}
+
+.categoryDesc {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+.addBtn {
+  display: none;
+}
+
+.mobileNav {
+  display: none;
+}
+
+.mobileLink {
+  display: none;
+}
+
+.logout {
+  background: none;
+  border: none;
+  border-top: 1px solid var(--border);
+  padding: 12px 20px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--text-muted);
+  cursor: pointer;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.logout:hover {
+  color: var(--red);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    padding: 0;
+    border-right: none;
+    border-top: 1px solid var(--text);
+    background: var(--bg);
+    z-index: 200;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .addBtnDesktop {
+    display: none;
+  }
+
+  .logout {
+    display: none;
+  }
+
+  .mobileNav {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0;
+  }
+
+  .mobileLink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    padding: 10px 0 8px;
+    flex: 1;
+    text-decoration: none;
+    color: var(--text-muted);
+    transition: color 0.1s;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .mobileLink span {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 8px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .mobileLinkActive {
+    color: var(--text);
+  }
+
+  .addBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    background: var(--text);
+    color: var(--bg);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    flex-shrink: 0;
+    position: relative;
+    top: -12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  }
+
+  .addBtn:active {
+    transform: scale(0.93);
+  }
+}
+
+@media (max-width: 380px) {
+  .mobileLink span {
+    font-size: 7px;
+  }
+}

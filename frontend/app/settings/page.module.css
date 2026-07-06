@@ -1,0 +1,246 @@
+.sectionBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
+.addBtn {
+  background: transparent;
+  border: 1px solid var(--text);
+  color: var(--text);
+  padding: 6px 16px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+.addBtn:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.addForm {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  padding: 10px 12px;
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: 0;
+}
+
+.addForm input,
+.addForm select {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 0;
+  padding: 6px 10px;
+  color: var(--text);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  flex: 1;
+  min-width: 100px;
+}
+
+.addForm input::placeholder {
+  color: var(--text-muted);
+}
+
+.addForm input:focus,
+.addForm select:focus {
+  outline: none;
+  border-color: var(--text);
+}
+
+.addForm select option {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.addForm button {
+  background: var(--text);
+  color: var(--bg);
+  border: none;
+  border-radius: 0;
+  padding: 6px 16px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.addForm button:hover {
+  background: var(--text-secondary);
+}
+
+.dangerZone {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--red);
+}
+
+.dangerTitle {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+
+.dangerText {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.dangerBtn {
+  background: transparent;
+  border: 1px solid var(--red);
+  color: var(--red);
+  padding: 10px 20px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+.dangerBtn:hover {
+  background: var(--red);
+  color: var(--bg);
+}
+
+.dangerInput {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  padding: 10px 0;
+  color: var(--text);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+
+.dangerInput:focus {
+  outline: none;
+  border-bottom-color: var(--red);
+}
+
+.profileRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 12px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.profileLabel {
+  font-size: 9px;
+  font-weight: 400;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.profileValue {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.sectionTitleGroup {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.sectionTitle {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.totalSubtitle {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.tdTruncate {
+  max-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tdMeta {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.tdMetaCaps {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: capitalize;
+}
+
+.profileValueCaps {
+  color: var(--text);
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.confirmText {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.dangerBtn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+@media (max-width: 768px) {
+  .addForm {
+    flex-direction: column;
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .addForm input,
+  .addForm select {
+    min-width: 0;
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .addForm button {
+    width: 100%;
+    padding: 12px;
+    font-size: 12px;
+  }
+}
